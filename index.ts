@@ -48,3 +48,61 @@ if(typeof some === "string") {
 } else {
     console.log(some, 'not string')
 }
+
+
+let person: [string, number]
+person = ['Max', 21];
+
+
+enum Status {LOADING, READY};
+
+
+let union: number | string;
+
+
+let literal: 'enable' | 'disable';
+
+
+function showMessage(message: string): void {
+    console.log(message);
+  }
+  
+  
+  function calc(num1: number, num2: number): number {
+    return num1 + num2;
+  }
+  
+  function customError(): never {
+    throw new Error('Error');
+  }
+
+  type Page = {
+    title: string,
+    likes: number,
+    accounts: string[],
+    status: 'open' | 'close',
+    details?: {
+      createAt: Date,
+      updateAt: Date,
+    }
+  }
+
+  const page1: Page = {
+    title: 'The awesome page',
+    likes: 100,
+    accounts: ['Max', 'Anton', 'Nikita'],
+    status: 'open',
+    details: {
+      createAt: new Date('2021-01-01'),
+      updateAt: new Date('2021-05-01'),
+    }
+  }
+  
+  const page2: Page = {
+    title: 'Python or Js',
+    likes: 5,
+    accounts: ['Alex'],
+    status: 'close',
+  }
+
+  console.log(page1, page2)
