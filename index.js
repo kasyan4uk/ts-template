@@ -20,3 +20,17 @@ var notInitialize;
 notInitialize = undefined;
 var callback = function (a) { return 100 + a; };
 console.log(callback(5));
+var anything;
+anything = -20;
+anything = 'Text';
+anything = {};
+var some;
+some = 5;
+var str;
+if (typeof some === "string") {
+    str = some;
+    console.log(str);
+}
+else {
+    console.log(some, 'not string');
+}

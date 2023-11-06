@@ -26,7 +26,25 @@ empty = null;
 let notInitialize: undefined;
 notInitialize = undefined;
 
-
 let callback = (a: number) => { return 100 + a };
 
 console.log(callback(5))
+
+
+let anything: any;
+anything = -20;
+anything = 'Text';
+anything = {};
+
+
+let some: unknown ;
+some = 'Text';
+
+let str: string;
+
+if(typeof some === "string") {
+    str = some
+    console.log(str)
+} else {
+    console.log(some, 'not string')
+}
