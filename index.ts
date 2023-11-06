@@ -26,7 +26,8 @@ empty = null;
 let notInitialize: undefined;
 notInitialize = undefined;
 
-let callback = (a: number) => { return 100 + a };
+let callback: (a: number) => number;
+callback = (a) => { return 100 + a };
 
 console.log(callback(5))
 
@@ -56,7 +57,18 @@ person = ['Max', 21];
 
 enum Status {LOADING, READY};
 
+const page = {
+    load: Status.READY
+}
 
+if (page.load === Status.LOADING) {
+    console.log('Сторінка завантажується');
+  }
+if (page.load === Status.READY) {
+    console.log('Сторінка завантажена');
+  }
+
+  
 let union: number | string;
 
 
