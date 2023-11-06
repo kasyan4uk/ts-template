@@ -7,3 +7,16 @@ function add(num1, num2) {
 button.addEventListener("click", function () {
     console.log(add(+input1.value, +input2.value));
 });
+//-----------------------------------------------------------------------------------------------------//
+var age;
+age = 50;
+var names;
+names = 'Max';
+var toggle;
+toggle = true;
+var empty;
+empty = null;
+var notInitialize;
+notInitialize = undefined;
+var callback = function (a) { return 100 + a; };
+console.log(callback(5));
