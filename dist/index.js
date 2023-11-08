@@ -1,33 +1,33 @@
-var button = document.querySelector("button");
-var input1 = document.getElementById("num1");
-var input2 = document.getElementById("num2");
+"use strict";
+const button = document.querySelector("button");
+const input1 = document.getElementById("num1");
+const input2 = document.getElementById("num2");
 function add(num1, num2) {
     return num1 + num2;
 }
 button.addEventListener("click", function () {
     console.log(add(+input1.value, +input2.value));
 });
-//-----------------------------------------------------------------------------------------------------//
-var age;
+let age;
 age = 50;
-var names;
+let names;
 names = 'Max';
-var toggle;
+let toggle;
 toggle = true;
-var empty;
+let empty;
 empty = null;
-var notInitialize;
+let notInitialize;
 notInitialize = undefined;
-var callback;
-callback = function (a) { return 100 + a; };
+let callback;
+callback = (a) => { return 100 + a; };
 console.log(callback(5));
-var anything;
+let anything;
 anything = -20;
 anything = 'Text';
 anything = {};
-var some;
+let some;
 some = 'Text';
-var str;
+let str;
 if (typeof some === "string") {
     str = some;
     console.log(str);
@@ -35,7 +35,7 @@ if (typeof some === "string") {
 else {
     console.log(some, 'not string');
 }
-var person;
+let person;
 person = ['Max', 21];
 var Status;
 (function (Status) {
@@ -43,8 +43,17 @@ var Status;
     Status[Status["READY"] = 1] = "READY";
 })(Status || (Status = {}));
 ;
-var union;
-var literal;
+const page = {
+    load: Status.READY
+};
+if (page.load === Status.LOADING) {
+    console.log('Сторінка завантажується');
+}
+if (page.load === Status.READY) {
+    console.log('Сторінка завантажена');
+}
+let union;
+let literal;
 function showMessage(message) {
     console.log(message);
 }
@@ -54,7 +63,7 @@ function calc(num1, num2) {
 function customError() {
     throw new Error('Error');
 }
-var page1 = {
+const page1 = {
     title: 'The awesome page',
     likes: 100,
     accounts: ['Max', 'Anton', 'Nikita'],
@@ -64,10 +73,11 @@ var page1 = {
         updateAt: new Date('2021-05-01'),
     }
 };
-var page2 = {
+const page2 = {
     title: 'Python or Js',
     likes: 5,
     accounts: ['Alex'],
     status: 'close',
 };
 console.log(page1, page2);
+//# sourceMappingURL=index.js.map
