@@ -11,5 +11,6 @@ button.addEventListener("click", function() {
 } )
 
 class House {
-    
+    public door: 'open' | 'closed';
+
 }
