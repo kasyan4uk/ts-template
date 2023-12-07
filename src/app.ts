@@ -87,4 +87,12 @@ interface Person {
   
   console.log(user?.additionInfo?.someInfo);
 
-
+  interface ILength {
+    length: number;
+  }
+  
+  function getLength<T extends ILength>(str:T) {
+    return str.length;
+  }
+  
+  getLength('text');
