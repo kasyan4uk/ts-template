@@ -71,28 +71,49 @@ button.addEventListener("click", function() {
 
 // house.comeIn(person);
 
-interface Person {
-    name: string;
-    additionInfo?: {
-      someInfo: string;
-    }
-  }
-  
-  const user: Person = {
-    name: 'Alex',
-    additionInfo: {
-        someInfo: 'adwda'
-    }
-  }
-  
-  console.log(user?.additionInfo?.someInfo);
+function getPromise (): Promise<(string | number)[]> {
+  return new Promise((resolve) => {
+    resolve(['Text', 50]);
+  });
+}
 
-  interface ILength {
-    length: number;
+getPromise ()
+.then((data) => {
+  console.log(data);
+});
+
+type AllType = {
+  name: string;
+  position: number;
+  color: string;
+  weight: number
+}
+
+function compare (top: Pick<AllType, 'name' | 'color'>, bottom: Pick<AllType, 'position' | 'weight'>): AllType {
+  return {
+    name: top.name,
+    color: top.color,
+    position: bottom.position,
+    weight: bottom.weight,
   }
-  
-  function getLength<T extends ILength>(str:T) {
-    return str.length;
+}
+
+function merge<T extends object, U extends object>(objA: T, objB: U) {
+  return Object.assign(objA, objB);
+}
+
+class Component<T> {
+  constructor (public props:T) {
+
   }
-  
-  getLength('text');
+}
+
+interface IProps {
+  title: string,
+}
+
+class Page extends Component<IProps> {
+  pageInfo () {
+    console.log(this.props.title);
+  }
+}
